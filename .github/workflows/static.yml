@@ -8,27 +8,24 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
-      # 1. Получение кода из репозитория
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Настройка Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+          cache: 'npm'
 
-      # 3. Установка зависимостей (ИЗМЕНЕНО)
       - name: Install dependencies
         run: npm install
 
-      # 4. Запуск сборки проекта
       - name: Build project
         run: npm run build
 
-      # 5. Деплой на GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
