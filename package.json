@@ -2,7 +2,7 @@
   "name": "ai-verification-system",
   "version": "1.0.0",
   "description": "AI система для автоматизации поверки счетчиков",
-  "homepage": "https://yourusername.github.io/ai-verification-system",
+  "homepage": ""https://oneself1.github.io/metrolog_app"",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
