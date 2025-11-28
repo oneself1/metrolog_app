@@ -1,35 +1,36 @@
-#name: Deploy to GitHub Pages
+
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ] # Запускать сборку при пуше в ветку "main"
+    branches: [ "main" ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-  # 1. Получение кода из репозитория
+      # 1. Получение кода из репозитория
       - name: Checkout code
         uses: actions/checkout@v4
 
-  # 2. Настройка Node.js
+      # 2. Настройка Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # Укажите вашу версию Node.js
+          node-version: '18'
 
-  # 3. Установка зависимостей
+      # 3. Установка зависимостей (ИЗМЕНЕНО)
       - name: Install dependencies
-        run: npm ci # Более строгая и надежная установка, чем `npm install`
+        run: npm install
 
-  # 4. Запуск сборки проекта
+      # 4. Запуск сборки проекта
       - name: Build project
-        run: npm run build # Эта команда создаст папку `build/`
+        run: npm run build
 
-  # 5. Деплой на GitHub Pages
+      # 5. Деплой на GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build # Указываем папку с результатом сборки
+          publish_dir: ./build
