@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ai-verification-system/static/css/main.6014681c.css",
+    "main.js": "/ai-verification-system/static/js/main.a4385536.js",
+    "index.html": "/ai-verification-system/index.html",
+    "main.6014681c.css.map": "/ai-verification-system/static/css/main.6014681c.css.map",
+    "main.a4385536.js.map": "/ai-verification-system/static/js/main.a4385536.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6014681c.css",
+    "static/js/main.a4385536.js"
+  ]
+}
